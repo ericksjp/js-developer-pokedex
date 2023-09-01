@@ -1,0 +1,31 @@
+API -> servidor que esta servindo dados para a gente
+
+//quando criamos uma pagina convencional com html, css, estamos
+//tambem servindo dados, mas de forma estilizada, a API serve os dados de forma pura, como um json por exemplo
+
+//solicitação do cliente para o servidor -> GET
+//resposta 200 -> deu cierto
+
+----------------------------------
+
+Uma requisição é composta de 
+
+-> URL: https://endereço.com
+
+-> Request Method: GET | POST | PUT | DELETE | PATCH
+
+-> Request e Hesponse Headers
+
+-> Request Body (em certos casos)
+
+------------------------------------
+SEVIDOR PROCESSA ESSA Requisição
+------------------------------------
+
+Uma resposta do servidor é composta de
+
+-> STATUS CODE -> significa oque aconteceu com a nossa requisição
+
+-> Response Headers -> vai me dizer como a resposta esta configurada pro cliente saber processar ela
+
+-> Response Body -> a resposta em si (não obrigatoria)

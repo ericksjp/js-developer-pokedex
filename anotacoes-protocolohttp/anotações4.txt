@@ -1,0 +1,20 @@
+-> Dependendo do método em que eu esteja utilizando, ha uma area de dados chamada body
+que é o corpo da nossa requisição, o dado que eu quero trafegar na requisição
+
+BODY
+
+-> Vou fazer uma requisição do tipo post para a api do pokemon
+-> Seguindo a logica, eu quero inserir um novo pokemon na api
+
+Request headers
+    content-type: application/json -> dizendo pro servidor oque eu vou enviar
+
+BODY
+{
+    "name":"gugu"
+    "idade":23
+}
+
+------------------------------------------------------------
+
+O servidor devolve um body pra gente como resposta

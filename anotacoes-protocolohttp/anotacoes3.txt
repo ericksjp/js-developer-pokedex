@@ -1,0 +1,45 @@
+São areas de dados em que a gente pode transmitir e receber coisas do servidor
+
+-> Response headers
+--> Metadados de resposta / "configurações" da resposta: feito pelo servidor
+
+content-type
+	application/json; charset=utf-8
+
+Pega ai p tu:
+    application/json -> um json
+    charset=utf-8 -> com essa codificação
+
+-----------------------------------------------------------------------------------------------
+
+-> Request headers
+--> Normalmente são metadados da nossa requisição 
+---> São as "configurações" da nossa requisição : feita pelo cliente
+
+Accept
+	text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+
+Estou dizendo pro servidor oque eu aceito como resposta
+
+Servidor, eu to aceitando oq eu posso aq:
+    text/html,
+    application/xhtml+xml,
+    application/xml;q=0.9,
+    image/avif,
+    image/webp,
+    */*;q=0.8
+
+Não necessiariamente o servidor vai devolver oque a gente aceita, estamos passando uma instrução, não uma ordem.
+
+-------------------------------------------------------------------------------------------------------------------
+
+Request headers
+    Configuração
+    Accept-Language:
+        en-US, -> a minha prioridade é o ingles americano, então se tu puder me falar em californiano ai eu agradeço
+        en;q=0.5 -> mas se vc for burrão pode me falar em qualquer ingles msm
+
+    //elencamos pra nossa api a prioridade da linguagem da resposta
+
+Response header
+    Configuração

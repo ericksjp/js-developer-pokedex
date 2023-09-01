@@ -1,0 +1,44 @@
+
+Requisição HTTP
+
+URL: https://pokeapi.co/api/v2/pokemon
+     ${Endereço}/${path = caminho de identificação do recurso}
+
+IP: https://pokeapi.co
+    https://127.0.0.1:3000
+// algum servidor dns é capaz de associar fazer essa associação e abstrair isso para o cliente
+
+PATH: /api/v2/pokemon
+
+Request Method: GET | POST | PUT | DELETE | PATCH
+
+// GET -> servidor entende que queremos buscar algum recurso
+
+// POST -> Inserir um pokemom
+
+// PUT -> Atualizar um pokemom
+
+// DELETE -> Deletar um pokemom
+
+// Simplificando: Oque eu quero fazer sobre o recurso é definido com o request method
+
+-------------------------------------------------------------------------------------------------
+
+// A primeira área de transferencia de dados é o propio path, em que especificamos o local do recurso que queremos
+https://pokeapi.co/api/v2/pokemon/--id--{x}
+
+-------------------------------------------------------------------------------------------------------
+
+// Carry string -> passo um filtro dizendo as especificaçoes das informações que eu quero receber
+ihttps://pokeapi.co/api/v2/pokemon?type=grass&name=i
+-> quero apenas os pokemons do tipo grass e que começem com a letra i
+
+?type=grass&name=i
+
+Chaves valores:
+    type=grass
+    name=i
+    offset -> deslocamento {0 = 1,2 | 1 = 3,4}
+    limit -> limitar a quantidade de dados por pagina
+
+// É a paginação da nossa busca

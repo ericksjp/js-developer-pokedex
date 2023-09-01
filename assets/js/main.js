@@ -1,47 +1,52 @@
-const pokemonList = document.getElementById('pokemonList')
-const loadMoreButton = document.getElementById('loadMoreButton')
+// fetch api -> vamos usar para fazer a requisição http
+
+const pokemonOl = document.getElementById('pokemonList') // pegando a minha lista pelo id
+const loadMoreButton = document.getElementById('loadMore')
+const limit = 8
+let offset = 0
 
 const maxRecords = 151
-const limit = 10
-let offset = 0;
 
-function convertPokemonToLi(pokemon) {
+function pokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}">
-            <span class="number">#${pokemon.number}</span>
-            <span class="name">${pokemon.name}</span>
-
-            <div class="detail">
-                <ol class="types">
-                    ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
-                </ol>
-
-                <img src="${pokemon.photo}"
-                     alt="${pokemon.name}">
-            </div>
-        </li>
+    <li class="pokemon ${pokemon.type}"}>
+        <span  class="number">#${pokemon.order}</span>
+        <span class="name">${pokemon.name}</span>
+        <div class="detail">
+            <ol class="types">
+            ${pokemon.types.map((typeSlot) => `<li class="type ${typeSlot}">${typeSlot}</li>`).join('')}
+            </ol>
+            <img src="${pokemon.photo}" alt="${pokemon.name}">
+        </div>
+    </li>
     `
 }
 
-function loadPokemonItens(offset, limit) {
+function loadMoreItens(offset, limit){
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
-        const newHtml = pokemons.map(convertPokemonToLi).join('')
-        pokemonList.innerHTML += newHtml
+        pokemonOl.innerHTML += pokemons.map(pokemonToLi).join('')
     })
 }
 
-loadPokemonItens(offset, limit)
+loadMoreItens(offset, limit)
+
 
 loadMoreButton.addEventListener('click', () => {
-    offset += limit
-    const qtdRecordsWithNexPage = offset + limit
+    offset += limit;
 
-    if (qtdRecordsWithNexPage >= maxRecords) {
+    const qtdRecordsWithNextPage = offset + limit
+
+    if (qtdRecordsWithNextPage >= maxRecords){
         const newLimit = maxRecords - offset
-        loadPokemonItens(offset, newLimit)
+        loadMoreItens(offset,newLimit)
 
         loadMoreButton.parentElement.removeChild(loadMoreButton)
-    } else {
-        loadPokemonItens(offset, limit)
-    }
+    } else 
+        loadMoreItens(offset,limit)
 })
+
+// -> fetch retorna uma promisse 
+// -> processamento assincrono (um processamento que não vai ser instantaneo)
+// -> promisse é uma promessa dessa resposta, uma hora tu vai receber essa resposta se der tido certo
+// -> then -> oque eu faço quando o fetch estiver processado
+// -> response.json () -> tambem retorna uma promessa
