@@ -1,5 +1,13 @@
 const pokeApi = {}
 
+class Pokemon{
+    order;
+    name;
+    type;
+    types = [];
+    photo;
+}
+
 function convertPokeApiDetailToPokemon(pokeDetail){
     const pokemon = new Pokemon()
     pokemon.name = pokeDetail.name

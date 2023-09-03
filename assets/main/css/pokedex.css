@@ -114,7 +114,6 @@
 .fairy{
     background-color: rgba(255, 255, 255, 0.6);
     box-shadow: 0px 0px 10px #ffffff;
-
 }
 
 .default {
@@ -189,6 +188,22 @@
     flex-direction: row;
     justify-content: center;
 }
+
+.details-button{
+    padding: 0.3rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-top: 0.3rem;
+  border-radius: 0.3rem;
+  text-decoration: none;
+  color: white;
+  border: 1px solid black;
+}
+
+.details-button:hover{
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
 
 @media screen and (min-width: 380px){
     .pokemons{

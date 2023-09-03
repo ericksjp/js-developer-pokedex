@@ -18,6 +18,7 @@ function pokemonToLi(pokemon) {
             </ol>
             <img src="${pokemon.photo}" alt="${pokemon.name}">
         </div>
+        <a class="details-button" href="../../../detalhes.html?number=${pokemon.order}">Details</a>
     </li>
     `
 }
